@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
         count = 0;
         //SetCountText();
         //winText.text = "";
+        
         // Add an AudioSource component and set up some defaults
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
@@ -27,11 +28,11 @@ public class PlayerController : MonoBehaviour
         audioSource.maxDistance = 20f;
 
         // Load the Sphere sounds from the Resources folder
-        collectClip = Resources.Load<AudioClip>("coin-collect");        
+        collectClip = Resources.Load<AudioClip>("coin-collect");
     }
 
     /// <summary>
-    /// Update is called once per frame 
+    /// Update is called once per frame
     /// </summary>
     void Update()
     {
@@ -42,23 +43,12 @@ public class PlayerController : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(headPosition, gazeDirection, out hitInfo))
         {
-            // Move this object's parent object to
-            // where the raycast hit the Spatial Mapping mesh.
-            //rigBod.transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y);
-
+            // Move the ball through gaze
             float moveHort = hitInfo.point.x;
             float moveVert = hitInfo.point.z;
             Vector3 movement = new Vector3(moveHort, 0.0f, moveVert);
             rigBod.AddForce(movement * speed);
         }
-    }
-
-    /// <summary>
-    /// Called before performing any physics calculations 
-    /// </summary>
-    void FixedUpdate()
-    {
-
     }
 
     void OnTriggerEnter(Collider other)
