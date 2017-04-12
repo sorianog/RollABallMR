@@ -21,11 +21,11 @@ public class PlayerController : MonoBehaviour
         // Add an AudioSource component and set up some defaults
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        audioSource.spatialize = true;
-        audioSource.spatialBlend = 1.0f;
-        audioSource.dopplerLevel = 0.0f;
-        audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
-        audioSource.maxDistance = 20f;
+        //audioSource.spatialize = true;
+        //audioSource.spatialBlend = 1.0f;
+        //audioSource.dopplerLevel = 0.1f;
+        //audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
+        //audioSource.maxDistance = 20f;
 
         // Load the Sphere sounds from the Resources folder
         collectClip = Resources.Load<AudioClip>("coin-collect");

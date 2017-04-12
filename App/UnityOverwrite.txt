@@ -11,7 +11,7 @@ GeneratedProjects\UWP\Assembly-CSharp-firstpass\project.json: modified
 Roll A Ball - Holographic\App.cs: 3118DCC310CE385E42357B8D8FF13802
 Roll A Ball - Holographic\Package.appxmanifest: 89009E27629F7360DA7DFA71560E9A83
 Roll A Ball - Holographic\project.json: modified
-Roll A Ball - Holographic\Roll A Ball - Holographic.csproj: D962EC1842AFD71098CFF37553C066F1
+Roll A Ball - Holographic\Roll A Ball - Holographic.csproj: 5BC1DEA7EAA6AA3DBE00D186E3312FB2
 Roll A Ball - Holographic\Roll A Ball - Holographic.csproj.user: modified
 Roll A Ball - Holographic\Assets\SplashScreen.scale-200.png: 60618416282ED104FD1473935716045D
 Roll A Ball - Holographic\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
