@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,8 +7,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Rigidbody rigBod;
     private int count;
-    //public Text countText;
-    //public Text winText;
+    public Text countText;
+    public Text winText;
     AudioSource audioSource = null;
     AudioClip collectClip = null;
 
@@ -15,17 +16,12 @@ public class PlayerController : MonoBehaviour
     {
         rigBod = GetComponent<Rigidbody>();
         count = 0;
-        //SetCountText();
-        //winText.text = "";
+        SetCountText();
+        winText.text = "";
         
         // Add an AudioSource component and set up some defaults
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        //audioSource.spatialize = true;
-        //audioSource.spatialBlend = 1.0f;
-        //audioSource.dopplerLevel = 0.1f;
-        //audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
-        //audioSource.maxDistance = 20f;
 
         // Load the Sphere sounds from the Resources folder
         collectClip = Resources.Load<AudioClip>("coin-collect");
@@ -59,16 +55,16 @@ public class PlayerController : MonoBehaviour
             audioSource.Play();
             other.gameObject.SetActive(false);
             count++;
-            //SetCountText();
+            SetCountText();
         }
     }
 
-    //void SetCountText()
-    //{
-    //    countText.text = "Score: " + count.ToString();
-    //    if (count >= 14)
-    //    {
-    //        winText.text = "You Win!";
-    //    }
-    //}
+    void SetCountText()
+    {
+        countText.text = "Score: " + count.ToString();
+        if (count >= 8)
+        {
+            winText.text = "You Win!";
+        }
+    }
 }
