@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
     private Rigidbody rigBod;
+    private Vector3 originalPosition;
     private int count;
     public Text countText;
     public Text winText;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigBod = GetComponent<Rigidbody>();
+        originalPosition = this.transform.localPosition;
         count = 0;
         SetCountText();
         winText.text = "";
@@ -66,5 +68,17 @@ public class PlayerController : MonoBehaviour
         {
             winText.text = "You Win!";
         }
+    }
+
+    void ResetGameText()
+    {
+        countText.text = "Score: 0";
+        winText.text = "";
+    }
+
+    void OnReset()
+    {
+        this.transform.localPosition = originalPosition;
+        ResetGameText();
     }
 }
