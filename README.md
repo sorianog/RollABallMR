@@ -2,7 +2,7 @@
 Unity's Roll A Ball game ported to MR with the HoloLens
 
 # Picture
-![RollABallMR Still](http://i.imgur.com/8wim4wNl.jpg)
+![RollABallMR Still](http://imgur.com/yROL6Rq.jpg)
 
 # Video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=YVvFSfN5_Kk

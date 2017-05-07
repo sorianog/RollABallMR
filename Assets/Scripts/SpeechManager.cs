@@ -14,12 +14,14 @@ public class SpeechManager : MonoBehaviour
     {
         keywords.Add("Pause Game", () =>
         {
-            this.BroadcastMessage("OnApplicationPause(true)");
+            AudioListener.volume = 0;
+            Time.timeScale = 0;
         });
 
         keywords.Add("Resume Game", () =>
         {
-            this.BroadcastMessage("OnApplicationPause(false)");
+            AudioListener.volume = 1;
+            Time.timeScale = 1;
         });
 
         keywords.Add("Reset Game", () =>

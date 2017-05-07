@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -10,8 +11,10 @@ public class PlayerController : MonoBehaviour
     private int count;
     public Text countText;
     public Text winText;
-    AudioSource audioSource = null;
-    AudioClip collectClip = null;
+    private AudioSource audioSource = null;
+    private AudioClip collectClip = null;
+    private List<GameObject> pickups = new List<GameObject>(); 
+
 
     void Start()
     {
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour
             audioSource.clip = collectClip;
             audioSource.Play();
             other.gameObject.SetActive(false);
+            pickups.Add(other.gameObject);
             count++;
             SetCountText();
         }
@@ -72,6 +76,7 @@ public class PlayerController : MonoBehaviour
 
     void ResetGameText()
     {
+        count = 0;
         countText.text = "Score: 0";
         winText.text = "";
     }
@@ -79,6 +84,10 @@ public class PlayerController : MonoBehaviour
     void OnReset()
     {
         this.transform.localPosition = originalPosition;
+        foreach (GameObject pickup in pickups)
+        {
+            pickup.SetActive(true);
+        }
         ResetGameText();
     }
 }
