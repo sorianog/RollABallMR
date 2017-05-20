@@ -7,7 +7,7 @@ Unity's Roll A Ball game ported to MR with the HoloLens
 # Video
 <a href="https://www.youtube.com/watch?v=oEgng5Hg1TI
 " target="_blank"><img src="http://img.youtube.com/vi/oEgng5Hg1TI/0.jpg"
-alt="IMAGE ALT TEXT HERE" width="640" height="480" /></a>
+alt="RollABallMR Video Demo" width="640" height="480" /></a>
 
 Resources:  
 [Roll A Ball Tutorial - Unity](https://unity3d.com/learn/tutorials/projects/roll-ball-tutorial)  
